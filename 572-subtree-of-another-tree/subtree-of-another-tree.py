@@ -11,20 +11,19 @@ class Solution:
         if not root:
             return False
 
-        if self.sameTree(root,subRoot):
+        if self.same(root,subRoot):
             return True
 
         return (self.isSubtree(root.left,subRoot)) or (self.isSubtree(root.right,subRoot))
 
 
-    def sameTree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
-        if not root and not subRoot: 
+    def same(self,s,t):
+        if not s and not t:
             return True
-        if root and subRoot and root.val==subRoot.val:
-            return (self.sameTree(root.left, subRoot.left)) and (self.sameTree(root.right,subRoot.right))
+        if s and t and s.val==t.val:
+            return (self.same(s.left, t.left) and self.same(s.right,t.right))
         
         return False
-        
         
 
         
