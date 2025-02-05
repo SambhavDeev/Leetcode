@@ -7,7 +7,7 @@ class Solution:
             if n==1:
                 return x
 
-            if n%2==0:
+            if n%2==0: #even number of x so group them together for example x=2 n=4 2*2*2*2 n=4  so we can write it as (2*2)*(2*2)==4*4 where n is reduced to half
                 return pow(x*x,n//2)
         
             return x*pow(x,n-1)
