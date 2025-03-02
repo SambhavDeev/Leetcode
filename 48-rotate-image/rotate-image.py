@@ -4,6 +4,8 @@ class Solution:
         Do not return anything, modify matrix in-place instead.
         """
         #transpose
+        #new matrix to create a trnaspose
+        #transpose=list(map(list,zip(*matrix)))
         for i in range(len(matrix)):
             for j in range(i):
                 matrix[i][j],matrix[j][i]=matrix[j][i],matrix[i][j]
