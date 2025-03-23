@@ -6,23 +6,31 @@ from collections import deque
 #         self.left = left
 #         self.right = right
 class Solution(object):
-    def levelOrder(self, root):
+    def levelOrder(self, root): #next level code 
         """
         :type root: TreeNode
         :rtype: List[List[int]]
         """
-        result=[]
-        q=collections.deque()
-        q.append(root)
+        res=[]
+        if not root:
+            return res
+        q=deque([[root,0]])#node,level
+        prev=0
+        curr=[]
         while q:
-            q_len=len(q)
-            level=[]
-            for i in range(q_len):
-                node=q.popleft()
-                if node is not None:
-                    level.append(node.val)
-                    q.append(node.left)
-                    q.append(node.right)
-            if level:
-                result.append(level)
-        return result
+            
+            node,lvl=q.popleft()
+            if lvl>prev:
+                
+                res.append(curr)
+                curr=[]
+                prev=lvl
+            if node:
+                curr.append(node.val)
+            if node and node.left is not None:
+                q.append([node.left,lvl+1])
+            if node and node.right is not None:
+                q.append([node.right,lvl+1])
+        res.append(curr)
+        return res
+        
