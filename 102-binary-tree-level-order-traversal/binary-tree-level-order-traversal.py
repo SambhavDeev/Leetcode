@@ -12,25 +12,27 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         res=[]
-        if not root:
+        if not root :
             return res
-        q=deque([[root,0]])#node,level
+        q=deque([[root,0]])
         prev=0
         curr=[]
         while q:
-            
             node,lvl=q.popleft()
+
             if lvl>prev:
-                
                 res.append(curr)
                 curr=[]
                 prev=lvl
             if node:
                 curr.append(node.val)
-            if node and node.left is not None:
+            if node.left and node:
                 q.append([node.left,lvl+1])
-            if node and node.right is not None:
+
+            if node.right and node:
                 q.append([node.right,lvl+1])
+
         res.append(curr)
+
         return res
         
