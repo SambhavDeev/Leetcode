@@ -1,7 +1,7 @@
 class Solution:
     def bs(self,mat,target):
         low=0
-        high=len(mat)-1
+        high=len(mat)
         while low<=high:
             mid=(low+high)//2
             if mat[mid]==target:
