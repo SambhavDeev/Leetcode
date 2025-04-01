@@ -6,7 +6,7 @@ class Solution:
         #reversing the whole array
         n=len(nums)
         k=k%n
-        nums[:]=nums[:][::-1]
-        nums[:k]=nums[:k][::-1]
-        nums[k:]=nums[k:][::-1]
+        nums[:]=nums[:][::-1]#reverse the whole array
+        nums[:k]=nums[:k][::-1]#reverse upto k elements
+        nums[k:]=nums[k:][::-1]#reverse from the k to last element
         return nums
