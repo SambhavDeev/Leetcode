@@ -1,5 +1,5 @@
 class Solution:
-    def maxSubArray(self, nums: List[int]) -> int:
+    def maxSubArray(self, nums: List[int]) -> int:#kadane
         maxer=float("-inf")
         sumer=0
         #starti , endi = -1,-1
