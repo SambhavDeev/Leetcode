@@ -5,19 +5,16 @@ class Solution:
         """
         #using dutch national flag
         n=len(nums)
-        low,mid,high=0,0,n-1
-
-        while mid<=high:
-            if nums[mid]==0:
-                nums[mid],nums[low]=nums[low],nums[mid]
-                mid+=1
-                low+=1
-
-            elif nums[mid]==1:
-                mid+=1
-
-            else:#nums[mid]==2
-                nums[mid],nums[high]=nums[high],nums[mid]
-                high-=1
+        l,m,h=0,0,n-1
+        while m<=h:
+            if nums[m]==0:
+                nums[m],nums[l]=nums[l],nums[m]
+                m+=1
+                l+=1
+            elif nums[m]==1:
+                m+=1
+            else:
+                nums[m],nums[h]=nums[h],nums[m]
+                h-=1
 
         return nums
